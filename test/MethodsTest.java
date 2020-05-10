@@ -237,7 +237,7 @@ public class MethodsTest {
         @Test
         @DisplayName("GIVEN names {Bob, Alise} WHEN wrong: Alise and correct: Alice THEN return {Bob, Alice}")
         public void correctListOfNames1() {
-            List<String> actual = Collections.singletonList(code.correctListOfNames(Arrays.asList("Bob", "Alise"), "Alise", "Alice"));
+            List<String> actual = code.correctListOfNames(Arrays.asList("Bob", "Alise"), "Alise", "Alice");
 
             assertTrue(Arrays.asList("Bob", "Alice").equals(actual));
         }
