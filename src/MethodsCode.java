@@ -53,26 +53,16 @@ public class MethodsCode {
      */
     //write you code here
 
-    public int bankStatementCalculator(List<String> bank){
 
-    bank = new ArrayList<>();
-        bank.add("$15.00");
-        bank.add("$10.20");
-        bank.add("$2075.00");
-        int sum =0;
-        int index = 0;
-        String myRegex = "$";
-        for (String s : bank){
-            bank.set(index++, s.replaceAll(myRegex, ""));
-            sum += Integer.valueOf(s);
-            if(sum == 0){
-                return -1;
-            }
-
+    public double bankStatementCalculator(List<String> bankStatements) {
+        double sum = 0;
+        for (String str : bankStatements) {
+            String removedDollar = str.replace("$", "");
+            String removedComma = removedDollar.replace(",", "");
+            sum += Double.valueOf(removedComma);
         }
-
-    return bankStatementCalculator(bank);
-}
+        return sum == 0 ? -1 : sum;
+    }
 
     //end
 
