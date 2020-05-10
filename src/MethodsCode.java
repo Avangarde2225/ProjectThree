@@ -23,16 +23,19 @@ public class MethodsCode {
      */
     //write you code here
 
-    public int getTotal(String ab){
+    public int getTotal(String number) {
+        int sum = 0;
 
-        if(Integer.valueOf(ab.charAt(0)) % 2 == 0 || Integer.valueOf(ab.charAt(1)) %2 == 1) {
-            return (Integer.valueOf(ab.charAt(0)) * 2 + (Integer.valueOf(ab.charAt(1)) * -1));
-        } else{
-            return -1;
+        for (int i = 0; i < number.length(); i++) {
+            Integer digit = Integer.valueOf(number.substring(i, i + 1));
+            if (digit % 2 == 0) {
+                sum += digit * 2;
+            } else {
+                sum += digit * -1;
+            }
         }
-
-
-        }
+        return sum == 0 ? -1 : sum;
+    }
 
     //end
 
