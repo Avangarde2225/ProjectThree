@@ -1,8 +1,9 @@
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
 public class MethodsCode {
+
+
+    private Object List;
 
     /**
      * TASK 1
@@ -21,6 +22,17 @@ public class MethodsCode {
      * because:
      */
     //write you code here
+
+    public int getTotal(String ab){
+
+        if(Integer.valueOf(ab.charAt(0)) % 2 == 0 || Integer.valueOf(ab.charAt(1)) %2 == 1) {
+            return (Integer.valueOf(ab.charAt(0)) * 2 + (Integer.valueOf(ab.charAt(1)) * -1));
+        } else{
+            return -1;
+        }
+
+
+        }
 
     //end
 
@@ -85,6 +97,37 @@ public class MethodsCode {
      * return is "-1"
      */
     //write you code here
+    public String getPopulation(List<String> countries, List<String> populations, String randomCountry) {
+
+        List<String> myCountries = Arrays.asList("USA", "Mexico", "South Korea", "Brazil");
+        List<String> myPopulations = Arrays.asList("300000000", "60000000", "5200000", "12000000");
+
+        for (int i = 0; i < myCountries.size(); i++) {
+            for (int j = 0; j < myPopulations.size(); j++) {
+                if(myCountries.equals(myCountries)){
+                    return myPopulations.get(j);
+                }else {
+                    return "-1";
+                }
+
+            }
+
+        }
+        public String getPopulation(List<String> ct ,List<String> pop, String country){
+            ct.add("usa");
+            ct.add("mexico");
+            ct.add("canada");
+            ct.add("brazil");
+            pop.add("3500000");
+            pop.add("100000000");
+            pop.add("50000000");
+            pop.add("1200000000");
+            for(int i=0;i<ct.size();i++){
+                if(!ct.get(i).equals(country)) {
+                    return String.valueOf(-1);
+                }
+                return String.valueOf(pop.get(i));
+            }
 
     //end
 
@@ -105,7 +148,19 @@ public class MethodsCode {
      * return {"Alice", "Bob", "Ali"}
      */
     // write your code here
+    public String correctListOfNames (List <String> alist){
 
+        ArrayList<String> alist = new ArrayList<String>();
+
+
+
+    }
     //end
 
 }
+
+    public void bankStatementCalculator() {
+    }
+
+    public void bankStatementCalculator() {
+    }
