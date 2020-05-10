@@ -81,21 +81,16 @@ public class MethodsCode {
      */
     //write you code here
 
-    public int randomGenerator(int bound){
-    Random rand = new Random();
-    int max = 10;
-    int min = 1;
-    int result = rand.nextInt(max - min + 1) + min;
-
-    if(result == 1){
-        return 1;
-    } else if (result < 1) {
-        return -1;
-    } else{
-        return result;
-    }
-
-
+    public int randomGenerator(int bound) {
+        if (bound < 1) {
+            return -1;
+        } else if (bound == 1) {
+            return 1;
+        } else {
+            Random rand = new Random();
+            int randomNumber = rand.nextInt(10) + 1;
+            return randomNumber;
+        }
     }
 
     //end
