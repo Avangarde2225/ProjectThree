@@ -124,23 +124,12 @@ public class MethodsCode {
      * return is "-1"
      */
     //write you code here
-    public String getPopulation(List<String> countries, List<String> populations, String randomCountry) {
-
-        List<String> myCountries = Arrays.asList("USA", "Mexico", "South Korea", "Brazil");
-        List<String> myPopulations = Arrays.asList("300000000", "60000000", "5200000", "12000000");
-
-        for (int i = 0; i < myCountries.size(); i++) {
-            for (int j = 0; j < myPopulations.size(); j++) {
-                if (myCountries.equals(myCountries)) {
-                    return myPopulations.get(j);
-                } else {
-                    return "-1";
-                }
-
-            }
-
+    public String getPopulation(List<String> countries, List<String> populations, String selectedCountry) {
+        int index = countries.indexOf(selectedCountry);
+        if (index == -1) {
+            return "-1";
         }
-        return "";
+        return populations.get(index);
     }
 
 //        public String getPopulation(List<String> ct,List<String> pop, String country){
