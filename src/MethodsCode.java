@@ -167,23 +167,13 @@ public class MethodsCode {
      * return {"Alice", "Bob", "Ali"}
      */
     // write your code here
-    public String correctListOfNames (List <String> names, String wrongName, String correctName){
-
-        names = new ArrayList<>();
-        names.add("Alise");
-        names.add("Bob");
-        names.add("Ali");
-
-        for(String name:names){
-            if(name.equals("Alise"))
-                wrongName +="Alise";
-        }
-
-
-        return correctName;
-    }
+    public List<String> correctListOfNames(List<String> names, String wn, String cn) {
+        int index = names.indexOf(wn);
+        names.set(index, cn);
+        return names;
     //end
 
 
 
+}
 }
