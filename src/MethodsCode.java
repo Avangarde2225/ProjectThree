@@ -46,8 +46,30 @@ public class MethodsCode {
      * ex: arguments is like: {$15.00, $10.20, $2,050,75} and return is 2075.95
      *
      * Hint: remove the unnecessary icons and calculate the total
+     * @return
      */
     //write you code here
+
+    public int bankStatementCalculator(List<String> bank){
+
+    bank = new ArrayList<>();
+        bank.add("$15.00");
+        bank.add("$10.20");
+        bank.add("$2075.00");
+        int sum =0;
+        int index = 0;
+        String myRegex = "$";
+        for (String s : bank){
+            bank.set(index++, s.replaceAll(myRegex, ""));
+            sum += Integer.valueOf(s);
+            if(sum == 0){
+                return -1;
+            }
+
+        }
+
+    return bankStatementCalculator(bank);
+}
 
     //end
 
@@ -65,6 +87,23 @@ public class MethodsCode {
      * ex3: 10 -> (random number between 1 and 10)
      */
     //write you code here
+
+    public int randomGenerator(int bound){
+    Random rand = new Random();
+    int max = 10;
+    int min = 1;
+    int result = rand.nextInt(max - min + 1) + min;
+
+    if(result == 1){
+        return 1;
+    } else if (result < 1) {
+        return -1;
+    } else{
+        return result;
+    }
+
+
+    }
 
     //end
 
@@ -104,30 +143,33 @@ public class MethodsCode {
 
         for (int i = 0; i < myCountries.size(); i++) {
             for (int j = 0; j < myPopulations.size(); j++) {
-                if(myCountries.equals(myCountries)){
+                if (myCountries.equals(myCountries)) {
                     return myPopulations.get(j);
-                }else {
+                } else {
                     return "-1";
                 }
 
             }
 
         }
-        public String getPopulation(List<String> ct ,List<String> pop, String country){
-            ct.add("usa");
-            ct.add("mexico");
-            ct.add("canada");
-            ct.add("brazil");
-            pop.add("3500000");
-            pop.add("100000000");
-            pop.add("50000000");
-            pop.add("1200000000");
-            for(int i=0;i<ct.size();i++){
-                if(!ct.get(i).equals(country)) {
-                    return String.valueOf(-1);
-                }
-                return String.valueOf(pop.get(i));
-            }
+        return "";
+    }
+
+//        public String getPopulation(List<String> ct,List<String> pop, String country){
+//            ct.add("usa");
+//            ct.add("mexico");
+//            ct.add("canada");
+//            ct.add("brazil");
+//            pop.add("3500000");
+//            pop.add("100000000");
+//            pop.add("50000000");
+//            pop.add("1200000000");
+//            for(int i=0;i<ct.size();i++){
+//                if(!ct.get(i).equals(country)) {
+//                    return String.valueOf(-1);
+//                }
+//                return String.valueOf(pop.get(i));
+//            }
 
     //end
 
@@ -148,19 +190,23 @@ public class MethodsCode {
      * return {"Alice", "Bob", "Ali"}
      */
     // write your code here
-    public String correctListOfNames (List <String> alist){
+    public String correctListOfNames (List <String> names, String wrongName, String correctName){
 
-        ArrayList<String> alist = new ArrayList<String>();
+        names = new ArrayList<>();
+        names.add("Alise");
+        names.add("Bob");
+        names.add("Ali");
+
+        for(String name:names){
+            if(name.equals("Alise"))
+                wrongName +="Alise";
+        }
 
 
-
+        return correctName;
     }
     //end
 
+
+
 }
-
-    public void bankStatementCalculator() {
-    }
-
-    public void bankStatementCalculator() {
-    }
